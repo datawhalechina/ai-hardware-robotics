@@ -16,7 +16,11 @@ from cartpole_env import *
 from matplotlib.pylab import mpl
 import matplotlib
 matplotlib.rcParams['axes.unicode_minus'] = False
-mpl.rcParams['font.sans-serif'] = ['SimHei']  # 添加这条可以让图形显示中文
+
+from matplotlib import font_manager
+font_path = "./AiDianFengYaHei（ShangYongMianFei）-2.ttf"  # 改成正确路径
+font_manager.fontManager.addfont(font_path)
+plt.rcParams['font.family'] = font_manager.FontProperties(fname=font_path).get_name()
 
 kp_cart = 2
 kd_cart = 50
